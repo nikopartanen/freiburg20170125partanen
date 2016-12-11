@@ -1,0 +1,54 @@
+---
+title: "Russian Influence Across Komi Registers"
+author: |
+  | Niko Partanen
+  | University of Hamburg
+date: "20 Oct 2016"
+output:
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+mainfont: Charis SIL
+header-includes: \usepackage{expex}
+bibliography: /Users/niko/org/pdf_readeR/local_pdfs.bib
+---
+
+```{r, echo=F}
+gloss <- function(gla, glb, glft){
+        glb <- gsub("([A-Z]{2,})", "\\\\textsc{\\1}", glb)
+        glb <- tolower(glb)
+        
+        example <- paste0("\\pex\n\\begingl\n\\gla ", gla, " //\n\\glb ", glb, " //\n\\glft ", glft, " //\n\\endgl\n\\xe")
+        example
+}
+
+```
+
+
+The Russian influence on the Iźva Komi variety has already received attention <!--, for example in a thorough --> in an overview by Leinonen [-@leinonen2009a] and recently by Dobrodyeyeva [-@dobrodyeyeva2016a]. I continue on this topic with a larger corpus containing different spoken and written Komi varieties. <!--, ranging from scientific papers to informal conversations.--><!-- The study has been inspired by a comment from Komi researcher Jölgiń Tsypanov, who has stated that [@cypanov2009b, p. 200] (Russian marked with bold, as in below):
+
+```{r, echo=F}
+ts <- gloss(gla = "torj-ən ɲin tajə tɨdal-ə oz bɨdlunɕa ɕorɲitantor jɨlɨɕ varovit-ig, **poʎicika**, uʤ, **ekonomika**, **sport** **cema**-jas vɨlə daɕtɨ-təm ɕorɲi-ɨn.", 
+            glb = "thing-INSTR already this show-3SG NEG.3SG every.day speaking.thing about babble-GER politics work economics sport theme-PL on prepare-CAR speech-INSTR", 
+            glft = "This (Russian lexicon) comes up especially while speaking unprepared about non-ordinary topics, themes like politics, work, economy or sport.")
+```
+
+`r ts`
+
+This is intuitively plausible and often presented as a fact,-->The connection of Russian elements to specific topics, genres and registers in Komi is often suggested [@cypanov2009b, p. 200]. I explore this, <!--how the differences in topic, genre and register contribute to the use of Russian elements,--> especially from the point of view of mixed grammatical structures and their classification. <!-- Due to centuries-old language contact, it is not possible to use Komi devoid of any Russian elements. --><!-- In more puristic registers, their analysis is close to--> At one end Russian loanwords can be identified only through an etymological investigation, whereas in the most relaxed spoken registers the style used could be described as a strongly mixed lect, with majority of tokens being of Russian origin and regularly displaying Russian morphology. There is also a community-wide norm of mixing, which aligns between these extremes. The appearance of different Russian borrowed elements is compared to the framework of Matras's borrowing hierarchies [-@matras2007b], while with more mixed elements, I <!--employ Muysken's categories [-@muysken2000a] and --> compare the overall situation to Auer's concepts of language mixing and fused lects [-@auer1999a], [-@auer2014a].<!-- Analysing different text types also gives insight to the question how the choice of data impacts to the results.-->
+
+<!-- Different texts clearly align across the whole spectrum between more and less Russian-containing, but the impact of themes, genres and registers seems to be connected with other factors as well. For example, --> <!-- What governs the differences in registers is not obvious, as one might intuitively assume that genres such as traditional stories would be relatively Komi; however, there are examples such as the following with--> Below is an example from the variety containing most Russian elements (Vym dialect, Kotus archive):
+
+```{r, echo=F}
+kotus <- gloss(gla = "\\textbf{odnaʒdɨ} **odʲin-ot** **muʒik** **reʃi-l-sʲa** **obmanutʲ** tajə **tsarsk**əj **ɕemja**-tə.", 
+            glb = "once one-DEF man decide-PST-REFL cheat.INF this Czar-ADJ family-ACC", 
+            glft = "Once the man decided to cheat the Tsar family.")
+```
+
+`r kotus`
+
+Here, Komi is hardly present, although many parts marked as Russian can be understood as bivalent [@woolard1998a]. <!--Few available very strongly Russian mixed texts-->This differs sharply from the rest of the Komi data, as there are, for example, Russian finite verbs, which are normally rare. In casual speech there are numerous ways to adapt Russian into Komi morphology, including marking adjectives with the Komi ending *-əj*, or appending Komi infinitive marker *-nɨ* to Russian verb stems. This adaptation does not involve much further phonological or morphological adaptation to the Komi system, as Russian phonology and features such as verb prefixes are kept intact. The adaptation also appears to exhibit some constraints: the forms containing Russian prefixes are very simple in terms of agglutinative Komi verbal morphology and are not derived further. <!--beyond shallow adaptation of the stem. , which reminds the treatment of verbs in Gurindji code-switching documented from the 70s [@mcconvellEtAl2005a, 20].--> <!-- Could the impacting factor be something more opaque or situational, for example, that this is probably originally a Russian story? Investigating the topic from perspectives such as this is not impossible, but the available datasets have their own limitations, as ideally there would be data from the same speaker in different contexts and the speakers' backgrounds would be well known. -->
+
+In the most puristic registers, the majority of Russian elements are international terminology. <!--, which, although acquired through Russian, is also part of the wider category of international words. In theory, many terms in this category would also have native neologisms, but as they are not widely known, their use easily endangers comprehensibility. --> A particularity of these registers is that they display the use of the native Komi discourse particle system, which is often replaced at least partly by Russian. However, the relatively strongly Russian-influenced register often seems to have acquired an unmarked status. This variety goes beyond regular code-switching as the motives governing mixing are not merely pragmatic [@auer1999a]. Similar developments have also been mentioned elsewhere with somehow mixed variety becoming the most prevalent or systematically occurring type of speech [@mcconvellEtAl2005a], [@oshannessy2005a]. Probably due to relatively strong language maintenance in many larger Komi communities, including widespread Komi fluency among children, there does not seem to be strong age-related variation in the community investigated. Instead the mixed variety seems stable and is used by all age groups. Also, due to peculiar sociolinguistic conditions the mixed variety is positively valorized in some of the studied speech communities. <!-- it seems likely that many speakers are not familiar with more standard Komi registers, or are for ideological reasons reluctant to use it.  Moreover, strongly Russian-avoiding variant seems to be employed in very exceptional circumstances, which may not be relevant for the majority of speakers and their daily language use.--> <!-- Classifying the occurrences of different mixed and borrowed elements also opens up opportunities to compare different minority languages which have been in contact with Russian. There is a good basis for comparative work with, for example, Kildin Saami, loan elements of which have already been well described [@riesler2007a]. -->
+
+## References
