@@ -8,35 +8,27 @@ subtitle: This page is just a test now
 <div id="main" class="center">
 <div id="content">
 
-This is a test.
-
 <div id="embedding-entity-example"></div>
 
 <script type="text/javascript">
-var bratLocation = 'http://weaver.nlplab.org/~brat/demo/v1.3';
+
 head.js(
 // External libraries
-bratLocation + '/client/lib/jquery.min.js',
-bratLocation + '/client/lib/jquery.svg.min.js',
-bratLocation + '/client/lib/jquery.svgdom.min.js',
+'brat/client/lib/jquery.min.js',
+'brat/client/lib/jquery.svg.min.js',
+'brat/client/lib/jquery.svgdom.min.js',
 
 
 // brat helper modules
-bratLocation + '/client/src/configuration.js',
-bratLocation + '/client/src/util.js',
-bratLocation + '/client/src/annotation_log.js',
-bratLocation + '/client/lib/webfont.js',
+'brat/client/src/configuration.js',
+'brat/client/src/util.js',
+'brat/client/src/annotation_log.js',
+'brat/client/lib/webfont.js',
 // brat modules
-bratLocation + '/client/src/dispatcher.js',
-bratLocation + '/client/src/url_monitor.js',
-bratLocation + '/client/src/visualizer.js'
+'brat/client/src/dispatcher.js',
+'brat/client/src/url_monitor.js',
+'brat/client/src/visualizer.js'
 );
-
-var webFontURLs = [
-bratLocation + '/static/fonts/Astloch-Bold.ttf',
-bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
-bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
-];
 
 head.ready(function() {
 
@@ -55,7 +47,7 @@ note that range of the offsets are [${START},${END}) */
 };
 
 Util.embed('embedding-entity-example', $.extend({}, collData),
-$.extend({}, docData), webFontURLs);
+$.extend({}, docData));
  
 });
 
