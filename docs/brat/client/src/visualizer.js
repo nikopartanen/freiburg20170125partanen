@@ -2834,7 +2834,7 @@ var Visualizer = (function ($, window, undefined) {
                     bgClass = 'background' + row.backgroundIndex;
                 } else {
                     // plain "standard" bg
-                    bgClass = 'backgroundHighlight';
+                    bgClass = 'background1';
                 }
                 svg.rect(backgroundGroup,
                 0, y + sizes.texts.y + sizes.texts.height,
