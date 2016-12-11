@@ -282,10 +282,10 @@ rect.shadow_EditHighlight {
   cursor: default;
 }
 
-.background0 {
+/* .background0 {
   stroke: none;
   fill: #ffffff;
-}
+} */
 
 .background1 {
   stroke: none;
@@ -477,13 +477,13 @@ fieldset legend {
   font-family: 'Liberation Sans';
   font-style: normal;
   font-weight: normal;
-  src: local('Liberation Sans'), local('Liberation-Sans'), url('static/fonts/Liberation_Sans-Regular.ttf') format('truetype');
+  src: local('Liberation Sans'), local('Liberation-Sans'), url('../brat/static/fonts/Liberation_Sans-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'PT Sans Caption';
   font-style: normal;
   font-weight: normal;
-  src: local('PT Sans Caption'), local('PTSans-Caption'), url('static/fonts/PT_Sans-Caption-Web-Regular.ttf') format('truetype');
+  src: local('PT Sans Caption'), local('PTSans-Caption'), url('../brat/static/fonts/PT_Sans-Caption-Web-Regular.ttf') format('truetype');
 }
 
 /* Apple iPad, iPhone, iPod */
