@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+author: "Niko Partanen"
+date: "11 December 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r download}
+
+komi_example <- "https://docs.google.com/document/d/1LDVrFa-KY96r2ansScxWAYCtqq7bJLSAWM9y4kKcnWI/export?format=html"
+
+library(xml2)
+library(readr)
+library(plyr)
+library(dplyr)
+
+```
+
+
+```{r}
+
+read_html("test/test.html") %>% xml_find_all("//p/span")
+
+```
+
