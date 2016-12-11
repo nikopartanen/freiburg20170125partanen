@@ -8,6 +8,8 @@ subtitle: This page is just a test now
 <div id="main" class="center">
 <div id="content">
 
+This is a test.
+
 <div id="embedding-entity-example"></div>
 
 <script type="text/javascript">
