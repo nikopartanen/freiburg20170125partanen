@@ -11,8 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r download}
 
-komi_example <- "https://docs.google.com/document/d/1LDVrFa-KY96r2ansScxWAYCtqq7bJLSAWM9y4kKcnWI/export?format=html"
-
 library(xml2)
 library(readr)
 library(plyr)
@@ -23,7 +21,39 @@ library(dplyr)
 
 ```{r}
 
-read_html("test/test.html") %>% xml_find_all("//p/span")
+# komi_example <- "https://docs.google.com/document/d/1LDVrFa-KY96r2ansScxWAYCtqq7bJLSAWM9y4kKcnWI/export?format=html"
+test_xml <- read_html("test/test.html") %>% xml_find_all("//p/span")
 
+result_text <- ldply(test_xml, function(x){
+        data_frame(style = x %>% xml_attr("class"),
+                   text = x %>% xml_text())
+})
+
+library(stringr)
+
+result_text %>% tidytext::unnest_tokens(output = "token", input = text) %>% View
+
+result_text %>% tidytext::unnest_tokens(output = "token", input = text) %>%
+        mutate(type = ifelse(str_detect(style, "^c0$"), yes = "kpv", no = "rus_orig")) %>%
+        mutate(type = ifelse(str_detect(style, "c2"), yes = "rus_model", no = type)) %>%
+        mutate(type = ifelse(str_detect(style, "c5"), yes = "rus", no = type)) -> result_full
+
+library(ggplot2)
+
+ggplot(result_full,
+       aes(x = type)) +
+               geom_bar()
+
+ggplot(result_full %>% distinct(),
+       aes(x = type)) +
+               geom_bar()
+
+
+```
+
+```{r}
+result_full %>% filter(type == "rus") %>% count(token) %>% arrange(desc(n))
+result_full %>% filter(type == "rus_orig") %>% count(token) %>% arrange(desc(n))
+result_full %>% filter(type == "kpv") %>% count(token) %>% arrange(desc(n))
 ```
 
