@@ -1,0 +1,640 @@
+---
+title: "Russian Influence Across Komi Registers"
+subtitle: "varying text types in time and space"
+author: "Niko Partanen"
+date: "2016/01/25"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["default", "multirange.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+bibliography: /Users/niko/FRibliography/bibtex/FRibliography.bib
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, echo=F)
+
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(ggvis)
+library(leaflet)
+
+```
+
+class: center, middle
+
+# Register
+
+### Usually studied as a scale on formality
+
+### Never occurs as the only variable
+
+---
+
+class: center, middle, sliderwidth100
+
+<section class="demo">
+<input type="range" multiple value="0,100" />
+</section>
+
+<script type="javascript" src="multirange.js"></script>
+
+---
+class: inverse, center, middle
+
+# Russian influence
+
+### Any element of Russian origin inserted into Komi
+
+### A change in structure modeled after Russian
+
+### (Focus in elements which are recognizable as Russian)
+
+---
+
+# Background
+
+Data produced in Iźva Komi Documentation project [@KSDP] reached maturity in 2016.
+
+At the same time lots of other data has also become available.
+
+- IKDP
+- Fenno-Ugrica
+- Komi written corpus
+- Different online corpora
+- ...
+
+Unclear whether individual **corpus** is the most useful point of reference.
+
+In no case is one corpus balanced, but they can be mixed creatively.
+
+--
+
+# My data a selection from all of these
+
+--
+
+Available [here](nikopartanen.github.io/freiburg20170125partanen).
+
+---
+
+# Some notes
+
+Majority of available corpora tend to be monolingual [@backus2008a].
+
+In principle the corpora of endangered languages have always **potential** to be multilingual. Ideally in designed manner.
+
+For different reasons this potential is often not realized.
+
+--
+
+# Some reasons
+
+- Need to get "good" data for grammatical description
+- Different language ideologies
+    + Researchers and speakers with their own
+- Specific well-established working practices
+
+---
+
+class: center, bottom, inverse
+background-image: url(two_videos.png)
+
+# My data
+
+---
+
+class: center, bottom, inverse
+background-image: url(sordla_2012.jpg)
+
+# ... language documentation stuff ...
+
+
+---
+
+class: center, bottom
+background-size: cover
+background-image: url(figures/text_montage2.jpg)
+
+---
+# Data description 
+
+```{r, echo=F}
+library(ggvis)
+numbers <- dplyr::data_frame(author = c("Speaker 1", "Speaker 2", "Speaker 3", "Singer 1", "J. Tsypanov", "Multiple", "Uspenskiy", "Multiple", "I. Belykh", "Multiple"),
+                                text = c("Interview", "Interview", "Interview", "Song", "Science", "Net", "Old book", "Official", "Prose", "Radio"),
+                             number = c(5000, 5000, 5000, 5000, 7000, 5000, 3000, 4000, 5000, 3000))
+```
+
+.footnote[[1] When possible, data on open license has been preferred, currently around 50,000 tokens]
+
+--
+- semi-structured interviews: shared background, different ages
+--
+
+- epic song recorded in 60s at Kolva river (of Nenets origin, in Komi)
+--
+
+- scientific article about the current state of the Komi language
+--
+
+- online conversations from randomly selected VKontakte groups in 2014
+--
+
+- educational book translated from Russian on 1940s
+--
+
+- official resolution of an international workshop in 2013
+--
+
+- ordinary Komi prose from 2000s
+--
+
+- a dialectal radio broadcast
+--
+
+- bible sample (audiobook)
+--
+
+- folktale
+--
+
+</br>
+</br>
+
+Nothing from the most casual friend-to-friend register for now!
+
+---
+
+class: center
+
+## Number of tokens per text type
+
+```{r, echo=F, fig.height=4, dev='svg'}
+ggplot(data = numbers, aes(x = text, y = number, fill = author)) + geom_bar(stat = "identity") +
+        theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+panel.background = element_blank(), axis.line = element_line(colour = "black"))
+```
+
+---
+
+# Annotation model
+
+Recognizes four levels (compare Backus [-@backus2008a])
+
+- Komi
+- Russian origin in Komi morphology
+- Russian morphology
+- Mixed elements
+--
+
+- Small look into syntactic structures (ongoing)
+
+--
+
+Став челядь миян странаын тӧдӧны Климент Ефремович Ворошиловӧс, Советской Союзса маршалӧс, Оборона кузя Народнӧй Комиссарӧс. Тӧдӧны сійос и радейтӧны.
+
+Все ребята нашей страны знают Климента Ефремовича Ворошилова, маршала Советского Союза, Народного Комиссара Обороны. Знают его и любят.
+
+Every child in our country knows Kliment Yefremovich Voroshilov, Marshal of the Soviet Union, the National Commissar of Orobon. They know and love him.
+
+---
+
+# Some background
+
+- Russian contact since 13th century (Leinonen 2009)
+- Some differences in intensity of the contact
+    + Some areas Russian speaking since the 16th century
+
+
+- Contact language typically a Russian dialect
+
+- Phonological systems of Komi and Russian relatively similar
+
+--
+
+- Borrowed material cannot always be marked to belong into either system
+
+--
+
+- Typical phenomena at the moment is the replacement of old Russian borrowings with the new ones
+
+---
+
+# Examples
+
+- kram > hram
+- kopej > kofe ~ kofʲe
+- ɕo > fʲsʲo
+
+# Ideologies of the accent
+
+- Komi pronunciation
+- Old people's pronunciation
+- Non-Russian speaker's pronunciation
+
+---
+
+class: inverse
+
+
+# Problems of register
+
+- Scale of formality -- fine
+
+- Defined how?
+
+--
+- Defined by who?
+
+
+--
+- Never the only variable in play
+
+
+--
+- Formality can also be detected by the features in the data
+    + Danger of circularity
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/89/Lud-festival.jpg)
+background-position: 50% 50%
+background-size: 115%
+class: center, bottom, inverse
+
+---
+
+# Hello Ninja
+
+As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+
+1. The [remark.js](https://remarkjs.com) library;
+
+1. The **xaringan** package;
+
+Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+
+---
+
+# remark.js
+
+You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
+
+- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
+
+- format a slide (e.g. text alignment);
+
+- configure the slideshow;
+
+- and use the presentation (keyboard shortcuts).
+
+It is important to be familiar with remark.js before you can understand the options in **xaringan**.
+
+---
+background-image: url(`r xaringan:::karl`)
+background-size: cover
+class: center, bottom, inverse
+
+# I was so happy to have discovered remark.js!
+
+---
+class: inverse, middle, center
+
+# Using xaringan
+
+---
+
+# xaringan
+
+Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+
+```yaml
+---
+title: "A Cool Presentation"
+output:
+  xaringan::moon_reader
+    yolo: true
+    nature:
+      autoplay: 30000
+---
+```
+
+See the help page `?xaringan::moon_reader` for all possible options that you can use.
+
+---
+
+# remark.js vs xaringan
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;<sup>*</sup>
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+---
+
+# Math Expressions
+
+You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+Limitations:
+
+1. The source code of a LaTeX math expression must be in one line;
+
+1. There should not be spaces after the opening `$` or before the closing `$`.
+
+If you are using the RStudio IDE, math expressions should be rendered even if you are offline.
+
+---
+
+# R Code
+
+```{r comment='#'}
+# a boring regression
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
+grep('天', dojutsu, value = TRUE)
+```
+
+---
+
+# R Plots
+
+```{r cars, fig.height=4, dev='svg'}
+par(mar = c(4, 4, 1, .1))
+plot(cars, pch = 19, col = 'darkgray', las = 1)
+abline(fit, lwd = 2)
+```
+
+---
+
+# HTML Widgets
+
+I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
+
+Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
+
+See the next page for two HTML widgets.
+
+---
+
+```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
+```
+
+---
+
+```{r eval=require('DT'), tidy=FALSE}
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 5)
+)
+```
+
+---
+
+# Some Tips
+
+- When you use the "Infinite Moon Reader" addin in RStudio, your R session will be blocked by default. You can click the red button on the right of the console to stop serving the slides, or use the _daemonized_ mode so that it does not block your R session. To do the latter, you can set the option
+
+    ```r
+    options(servr.daemon = TRUE)
+    ```
+    
+    in your current R session, or in `~/.Rprofile` so that it is applied to all future R sessions. I do the latter by myself.
+    
+    To know more about the web server, see the [**servr**](https://github.com/yihui/servr) package.
+
+--
+
+- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        yolo: true
+    ```
+
+---
+
+# Some Tips
+
+- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds (this can be useful for lightning talks):
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          autoplay: 30000
+    ```
+
+--
+
+- The option `highlightLines: true` of `nature` will highlight code lines that start with `*` or are wrapped in `{{ }}`;
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          highlightLines: true
+    ```
+
+    See examples on the next page.
+
+---
+
+# Some Tips
+
+
+.pull-left[
+An example using a leading `*`:
+
+    ```r
+    if (TRUE) {
+    ** message("Very important!")
+    }
+    ```
+Output:
+```r
+if (TRUE) {
+* message("Very important!")
+}
+```
+
+This is invalid R code, so it is a plain fenced code block that is not executed.
+]
+
+.pull-right[
+An example using `{{}}`:
+
+    `r ''````{r tidy=FALSE}
+    if (TRUE) {
+    *{{ message("Very important!") }}
+    }
+    ```
+Output:
+```{r tidy=FALSE}
+if (TRUE) {
+{{ message("Very important!") }}
+}
+```
+
+It is valid R code so you can run it.
+]
+
+---
+
+# Some Tips
+
+- To make slides work offline, you need to download a copy of remark.js in advance, because **xaringan** uses the online version by default (see the help page `?xaringan::moon_reader`).
+
+- You can use `xaringan::summon_remark()` to download the latest or a specified version of remark.js. By default, it is downloaded to `libs/remark-latest.min.js`.
+
+- Then change the `chakra` option in YAML to point to this file, e.g.
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        chakra: libs/remark-latest.min.js
+    ```
+
+- If you used Google fonts in slides (the default theme uses _Yanone Kaffeesatz_, _Droid Serif_, and _Source Code Pro_), they won't work offline unless you download or install them locally. The Heroku app [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts) can help you download fonts and generate the necessary CSS.
+
+
+---
+
+# CSS
+
+Among all options in `xaringan::moon_reader`, the most challenging but perhaps also the most rewarding one is `css`, because it allows you to customize the appearance of your slides using any CSS rules or hacks you know.
+
+You can see the default CSS file [here](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/example.css). You can completely replace it with your own CSS files, or define new rules to override the default.
+
+---
+
+# CSS
+
+For example, suppose you want to change the font for code from the default "Source Code Pro" to "Ubuntu Mono". You can create a CSS file named, say, `ubuntu-mono.css`:
+
+```css
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+```
+
+Then set the `css` option in the YAML metadata:
+
+```yaml
+output:
+  xaringan::moon_reader:
+    css: ["default", "ubuntu-mono.css"]
+```
+
+Here I assume `ubuntu-mono.css` is under the same directory as your Rmd.
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
+background-size: contain
+
+# Naruto
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+background-size: 100px
+background-position: 90% 8%
+
+# Sharingan
+
+The R package name **xaringan** was derived<sup>1</sup> from **Sharingan**, a dōjutsu in the Japanese anime _Naruto_ with two abilities:
+
+- the "Eye of Insight"
+
+- the "Eye of Hypnotism"
+
+I think a presentation is basically a way to communicate insights to the audience, and a great presentation may even "hypnotize" the audience.<sup>2,3</sup>
+
+.footnote[
+[1] In Chinese, the pronounciation of _X_ is _Sh_ /ʃ/ (as in _shrimp_). Now you should have a better idea of how to pronounce my last name _Xie_.
+
+[2] By comparison, bad presentations only put the audience to sleep.
+
+[3] Personally I find that setting background images for slides is a killer feature of remark.js. It is an effective way to bring visual impact into your presentations.
+]
+
+---
+
+# Naruto terminology
+
+The **xaringan** package borrowed a few terms from Naruto, such as
+
+- [Sharingan](http://naruto.wikia.com/wiki/Sharingan) (写輪眼; the package name)
+
+- The [moon reader](http://naruto.wikia.com/wiki/Moon_Reader) (月読; an attractive R Markdown output format)
+
+- [Chakra](http://naruto.wikia.com/wiki/Chakra) (查克拉; the path to the remark.js library, which is the power to drive the presentation)
+
+- [Nature transformation](http://naruto.wikia.com/wiki/Nature_Transformation) (性質変化; transform the chakra by setting different options)
+
+- The [infinite moon reader](http://naruto.wikia.com/wiki/Infinite_Tsukuyomi) (無限月読; start a local web server to continuously serve your slides)
+
+- The [summoning technique](http://naruto.wikia.com/wiki/Summoning_Technique) (download remark.js from the web)
+
+You can click the links to know more about them if you want. The jutsu "Moon Reader" may seem a little evil, but that does not mean your slides are evil.
+
+---
+
+class: center
+
+# Hand seals (印)
+
+Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+---
+# References
