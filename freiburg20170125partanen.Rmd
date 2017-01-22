@@ -6,7 +6,9 @@ date: "2016/01/25"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: ["default", "multirange.css"]
+    css: ["default"]
+    in_header: "multirange.css"
+    after_body: "multirange.js"
     nature:
       highlightStyle: github
       highlightLines: true
@@ -28,9 +30,7 @@ class: center, middle
 
 # Register
 
-### Usually studied as a scale on formality
-
-### Never occurs as the only variable
+### Usually seen as a scale on formality
 
 ---
 
@@ -100,6 +100,8 @@ For different reasons this potential is often not realized.
 
 ---
 
+background-position: 50% 50%
+background-size: 115%
 class: center, bottom, inverse
 background-image: url(two_videos.png)
 
@@ -115,9 +117,17 @@ background-image: url(sordla_2012.jpg)
 
 ---
 
+image-position: 20% 50%
+image-size: 50%
 class: center, bottom
-background-size: cover
-background-image: url(figures/text_montage2.jpg)
+![](figures/text_montage2.jpg)
+--
+
+image-position: 50% 50%
+image-size: 50%
+image-rotate(45deg)
+class: center, bottom
+![](figures/text_montage2.jpg)
 
 ---
 # Data description 
