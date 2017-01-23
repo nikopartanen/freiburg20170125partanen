@@ -14,7 +14,7 @@ baseurl: "/freiburg20170125partanen"
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Example dataset for Niko's presentation
+title: Example dataset for Niko's Freiburg presentation
 
 # Short description of your site
 description: This is just example now
@@ -74,7 +74,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "langdoc.github.io/FRechdoc"  # eg. "deanattali.com/beautiful-jekyll"
+# url-pretty: "langdoc.github.io/FRechdoc"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
