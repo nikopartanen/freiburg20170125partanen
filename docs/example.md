@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Brat example page
-subtitle: This page is just a test now
+title: Example page
+subtitle: Link to the "annotation scheme"
 ---
 
 {% include example_brat.html %}
