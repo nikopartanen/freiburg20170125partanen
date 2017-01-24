@@ -1,9 +1,10 @@
-four_battles_kpv  written
-kpv_ib_2005 written
-kpv_izva20140324-1  spoken
-kpv_izva20140325-2  spoken
-kpv_izva20150402-7-b  spoken
-kpv_lit20121201furor  written
-kpv_zbk_1980  written
-kpv_zbk_1985  written
-tsypanov2009b written
+name,formality,mode,genre,origin,metre
+four_battles_kpv,5,written,prose,translated,free
+kpv_ib_2005,5,written,prose,original,free
+kpv_izva20140324-1,8,spoken,interview,original,free
+kpv_izva20140325-2,8,spoken,interview,original,free
+kpv_izva20150402-7-b,8,spoken,interview,original,free
+kpv_lit20121201furor,3,written,legal,translated,free
+kpv_zbk_1980,written,4,folklore,original,free
+kpv_zbk_1985,written,4,folklore,original,poem
+tsypanov2009b,written,2,scientific,original,free
