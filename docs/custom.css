@@ -1,0 +1,15 @@
+.ro{
+    color: red;
+}
+
+.rm{
+    color: blue;
+}
+
+#sampleMovie{
+    width:400;
+}
+
+#deleted{
+    text-decoration:line-through;
+}
